@@ -1,0 +1,18 @@
+{
+    "resourceSpecId": "",
+    "stableId": "apigateway",
+    "displayName": "API Gateway",
+    "resourceType": "api.gateway",
+    "vpcDependency": "optional",
+    "status": "draft",
+    "inputs": {
+        "name": "sigmoid-api",
+        "protocol_type": "HTTP"
+    },
+    "terraform": {
+        "module": {
+            "source": "../../terraform-modules/terraform-aws-apigateway"
+        }
+    },
+    "position": { "x": 0, "y": 0 }
+}
