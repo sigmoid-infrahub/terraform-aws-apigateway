@@ -1,17 +1,39 @@
 {
-    "resourceSpecId": "",
+    "resourceSpecId": "11111111-1111-4111-8111-111111111111",
     "stableId": "apigateway",
     "displayName": "API Gateway",
     "resourceType": "api.gateway",
     "vpcDependency": "optional",
-    "status": "draft",
+    "status": "stable",
     "inputs": {
         "name": "sigmoid-api",
         "protocol_type": "HTTP"
     },
+    "inputSpecs": [
+        { "name": "name", "type": "string", "required": true, "description": "API Gateway name" },
+        { "name": "protocol_type", "type": "string", "required": true, "default": "HTTP", "validation": { "enum": ["HTTP", "WEBSOCKET"] }, "description": "Protocol type (HTTP or WEBSOCKET)" },
+        { "name": "description", "type": "string", "required": false, "description": "API description" },
+        { "name": "api_version", "type": "string", "required": false, "description": "API version" },
+        { "name": "disable_execute_api_endpoint", "type": "boolean", "required": false, "default": false, "description": "Disable default execute API endpoint" },
+        { "name": "cors_configuration", "type": "object", "required": false, "description": "CORS configuration" },
+        { "name": "routes", "type": "array", "required": false, "default": [], "description": "Routes configuration" },
+        { "name": "integrations", "type": "array", "required": false, "default": [], "description": "Integrations configuration" },
+        { "name": "authorizers", "type": "array", "required": false, "default": [], "description": "Authorizers configuration" },
+        { "name": "stages", "type": "array", "required": false, "default": [], "description": "Stages configuration" },
+        { "name": "domain_name", "type": "string", "required": false, "description": "Custom domain name" },
+        { "name": "domain_name_certificate_arn", "type": "string", "required": false, "description": "Domain name certificate ARN" },
+        { "name": "vpc_link_id", "type": "string", "required": false, "description": "VPC link ID for private integrations" },
+        { "name": "subnet_ids", "type": "array", "required": false, "default": [], "description": "Subnet IDs for VPC link" },
+        { "name": "security_group_ids", "type": "array", "required": false, "default": [], "description": "Security group IDs for VPC link" },
+        { "name": "access_log_settings", "type": "object", "required": false, "description": "Access log settings" },
+        { "name": "throttling_burst_limit", "type": "number", "required": false, "default": 5000, "description": "Throttling burst limit" },
+        { "name": "throttling_rate_limit", "type": "number", "required": false, "default": 10000, "description": "Throttling rate limit" },
+        { "name": "tags", "type": "map", "required": false, "default": {}, "description": "Tags to apply to resources" }
+    ],
     "terraform": {
         "module": {
-            "source": "../../terraform-modules/terraform-aws-apigateway"
+            "source": "github.com/sigmoid-hq/terraform-aws-apigateway",
+            "ref": "main"
         }
     },
     "position": { "x": 0, "y": 0 }

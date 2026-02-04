@@ -89,7 +89,6 @@ resource "aws_apigatewayv2_stage" "this" {
       throttling_rate_limit  = lookup(default_route_settings.value[0], "throttling_rate_limit", null)
       data_trace_enabled     = lookup(default_route_settings.value[0], "data_trace_enabled", null)
       logging_level          = lookup(default_route_settings.value[0], "logging_level", null)
-      metrics_enabled        = lookup(default_route_settings.value[0], "metrics_enabled", null)
     }
   }
 }
