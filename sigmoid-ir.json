@@ -3,6 +3,7 @@
     "stableId": "apigateway",
     "displayName": "API Gateway",
     "category": "network",
+    "iconUrl": "https://cdn.sigmoid.us/icons/aws/full-size/svg/networking/api-gateway.svg",
     "resourceType": "api.gateway",
     "vpcDependency": "optional",
     "status": "draft",
