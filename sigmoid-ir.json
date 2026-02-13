@@ -13,5 +13,17 @@
             "ref": "main"
         }
     },
+    "pricing": {
+        "awsPricingLookup": {
+            "serviceCode": "AmazonApiGateway",
+            "unit": "per_million",
+            "quantityProperties": ["monthly_requests"],
+            "quantityDefault": 0,
+            "filters": [
+                { "field": "location", "value": "${location}" },
+                { "field": "productFamily", "defaultValue": "API Calls", "required": false }
+            ]
+        }
+    },
     "position": { "x": 0, "y": 0 }
 }
